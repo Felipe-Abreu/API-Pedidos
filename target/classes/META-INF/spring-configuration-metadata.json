@@ -1,0 +1,17 @@
+{
+  "groups": [
+    {
+      "name": "api",
+      "type": "br.com.bhut.assessment.assessmentfelipe.services.ConfigurationApi",
+      "sourceType": "br.com.bhut.assessment.assessmentfelipe.services.ConfigurationApi"
+    }
+  ],
+  "properties": [
+    {
+      "name": "api.bhut-api",
+      "type": "java.lang.String",
+      "sourceType": "br.com.bhut.assessment.assessmentfelipe.services.ConfigurationApi"
+    }
+  ],
+  "hints": []
+}
