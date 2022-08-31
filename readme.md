@@ -36,7 +36,7 @@ Sendo então:
 
 - [Get list cars](https://assessment-felipe.herokuapp.com/api/listCars)
 - [Post creat cliente](https://assessment-felipe.herokuapp.com/api/createCar)
-- [Get log create cliente](https://assessment-felipe.herokuapp.com/api/logCars)
+- [Get cliente create cliente](https://assessment-felipe.herokuapp.com/api/logCars)
 
 ## :computer: Resultados
 

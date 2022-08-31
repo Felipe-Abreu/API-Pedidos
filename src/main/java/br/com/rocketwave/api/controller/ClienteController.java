@@ -1,10 +1,12 @@
 package br.com.rocketwave.api.controller;
 
 import br.com.rocketwave.api.model.Cliente;
+import br.com.rocketwave.api.services.ClienteServices;
 import br.com.rocketwave.api.services.OutBoundCalls;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
@@ -13,22 +15,32 @@ import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 @RequestMapping("api")
 public class ClienteController {
 
-    private final OutBoundCalls outBoundServices;
+    private final ClienteServices clienteServices;
 
     @Autowired
-    public ClienteController(OutBoundCalls outBoundServices) {
+    public ClienteController(ClienteServices clienteServices) {
 
-        this.outBoundServices = outBoundServices;
+        this.clienteServices = clienteServices;
     }
 
-    @GetMapping("listaClientes")
+    @GetMapping(value = "listaClientes")
     public List<Cliente> listCliente() {
-        return outBoundServices.clienteConsuming();
+        return clienteServices.clienteConsuming();
     }
 
     @PostMapping(value = "criaCliente", consumes = APPLICATION_JSON_VALUE)
-    public Cliente createCar(@RequestBody Cliente cliente) {
-        return outBoundServices.postCliente(cliente);
+    public Cliente criaCliente(@RequestBody @Valid Cliente cliente) {
+        return clienteServices.postCliente(cliente);
+    }
+
+    @PutMapping(value = "listaClientes/{id}", consumes = APPLICATION_JSON_VALUE)
+    public Cliente atualizaCliente(@RequestBody @Valid Cliente cliente){
+        return clienteServices.atualizaCliente(cliente);
+    }
+
+    @DeleteMapping(value = "listaClientes/{id}")
+    public void deletaCliente(@PathVariable("id") Cliente cliente){
+        clienteServices.deletaCliente(cliente);
     }
 
 }

@@ -1,8 +1,10 @@
-app:
-  urlexternal: "http://api-test.bhut.com.br:3000/api/cars"
-
+##PostgreSQL
 spring:
-  data:
-    mongodb:
-      database: "repositoryDB"
-      uri: "mongodb+srv://felipe-abreu:saGMLo9Szm4ZZUP3@cluster0.rhpcyon.mongodb.net/?retryWrites=true&w=majority"
+  datasource:
+    url: "jdbc:postgresql://localhost:5432/apiPedidos"
+    username: "postgres"
+    password: "postgres"
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true

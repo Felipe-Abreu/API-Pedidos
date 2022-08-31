@@ -1,22 +1,37 @@
 package br.com.rocketwave.api.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
+import org.hibernate.validator.constraints.br.CPF;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
 
+@Entity
 @Data
-@JsonIgnoreProperties(ignoreUnknown = true)
 public class Cliente {
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @NotEmpty
     private String nome;
+    @Id
+    @NotEmpty
+    @CPF
     private String cpf;
+    @Column(unique = true)
+    @NotEmpty
+    @Email
     private String email;
+    @NotEmpty
     private String endereco;
-    private LocalDate DataNascimento;
+    @NotNull
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy")
+    private LocalDate dataNascimento;
+    @NotNull
     private Integer telefone;
 
 }
