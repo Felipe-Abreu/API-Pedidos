@@ -27,32 +27,7 @@ Esse projeto foi utilizado com as seguintes tecnologias:
 - Maven;
 - Linguagem Java 11;
 - IDE Intellij;
-- Banco NoSQL MongoDB;
-- Heroku Cli App.
-
-Para conseguir rodar e ver os resultados, pode ser baixado o ZIP e buildado localmente, ou utilizando o link gerado do heroku, que permite realizar as mesmas funções.
-</br>
-Sendo então:
-
-- [Get list cars](https://assessment-felipe.herokuapp.com/api/listCars)
-- [Post creat cliente](https://assessment-felipe.herokuapp.com/api/createCar)
-- [Get cliente create cliente](https://assessment-felipe.herokuapp.com/api/logCars)
-
-## :computer: Resultados
-
-![img_1.png](img_1.png)
-![img_2.png](img_2.png)
-<h6 align="center">Log de registro quando um carro é inserido </h6>
-
-![img_3.png](img_3.png)
-
-<h6 align="center">Lista todos os carros consultando na apiExterna </h6>
-
-![img_4.png](img_4.png)
-
-<h6 align="center">Post, criação de um carro dentro da API</h6>
-
-![img_5.png](img_5.png)
+- Banco PostgreSql;
 
 ---
 Feito por Felipe Abreu :wave: [Venha me conhecer um pouco mais!](https://www.linkedin.com/in/felipe-abreu)
